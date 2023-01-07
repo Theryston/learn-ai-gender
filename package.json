@@ -1,0 +1,19 @@
+{
+  "name": "learn-ai-gender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "learn": "node src/index.js",
+    "predict": "node src/predict.js",
+    "f1": "node src/f1.js"
+  },
+  "keywords": [],
+  "author": "Theryston",
+  "license": "ISC",
+  "dependencies": {
+    "brain.js": "2.0.0-beta.18",
+    "csvtojson": "^2.0.10",
+    "lodash": "^4.17.21"
+  }
+}
