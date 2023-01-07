@@ -15,6 +15,7 @@ async function main() {
     learningRate: 0.001,
   });
 
+  console.log(`Starting training for ${dataName}...`);
   const startTime = Date.now();
   net.train(trainingData, {
     log: true,
