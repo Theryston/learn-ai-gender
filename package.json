@@ -1,16 +1,15 @@
 {
   "name": "learn-ai-gender",
   "version": "1.0.0",
-  "description": "",
+  "description": "A project made to train a machine learning model to identify a person's gender by name",
   "main": "src/index.js",
   "scripts": {
     "learn": "node src/index.js",
     "predict": "node src/predict.js",
     "f1": "node src/f1.js"
   },
-  "keywords": [],
   "author": "Theryston",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "brain.js": "2.0.0-beta.18",
     "csvtojson": "^2.0.10",
