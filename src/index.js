@@ -12,7 +12,6 @@ async function main() {
 
   const net = new brain.recurrent.LSTM({
     hiddenLayers: [64, 64],
-    learningRate: 0.001,
   });
 
   console.log(`Starting training for ${dataName}...`);
@@ -20,7 +19,8 @@ async function main() {
   net.train(trainingData, {
     log: true,
     logPeriod: 1,
-    iterations: 1000,
+    errorThresh: 0.005,
+    iterations: 10000,
   });
   const endTime = Date.now();
   const visualElapsed = await handleVisualElapsed(endTime, startTime);
