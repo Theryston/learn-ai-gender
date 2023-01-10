@@ -6,7 +6,7 @@
   "scripts": {
     "learn": "node src/index.js",
     "predict": "node src/predict.js",
-    "f1": "node src/f1.js"
+    "accuracy": "node src/accuracy.js"
   },
   "author": "Theryston",
   "license": "MIT",

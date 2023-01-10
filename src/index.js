@@ -3,7 +3,6 @@ const path = require("path");
 const csvtojson = require("csvtojson");
 const _ = require("lodash");
 const brain = require("brain.js");
-const handleVisualElapsed = require("./utils/handleVisualElapsed");
 
 async function main() {
   const { filePath, dataName } = handleData();
@@ -15,16 +14,14 @@ async function main() {
   });
 
   console.log(`Starting training for ${dataName}...`);
-  const startTime = Date.now();
+  console.time("Time to train");
   net.train(trainingData, {
     log: true,
     logPeriod: 1,
     errorThresh: 0.005,
-    iterations: 10000,
+    iterations: 1000,
   });
-  const endTime = Date.now();
-  const visualElapsed = await handleVisualElapsed(endTime, startTime);
-  console.log(`Training time ${visualElapsed}`);
+  console.timeEnd("Time to train");
 
   await saveModel(net, dataName);
 
@@ -64,7 +61,7 @@ function handleData() {
     return;
   }
 
-  const filePath = path.join(__dirname, "data", `/${dataName}.csv`);
+  const filePath = path.join(__dirname, "train", `/${dataName}.csv`);
 
   if (!fs.existsSync(filePath)) {
     console.log(`File ${filePath} does not exist`);

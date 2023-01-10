@@ -10,7 +10,9 @@ async function main() {
 
   const name = process.argv[3];
 
+  console.time("Time to predict gender");
   const output = net.run(name);
+  console.timeEnd("Time to predict gender");
 
   console.log(`Gender: ${output}`);
 }
