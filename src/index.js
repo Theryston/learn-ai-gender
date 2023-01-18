@@ -10,7 +10,7 @@ async function main() {
   const trainingData = await getTrainingData(filePath);
 
   const net = new brain.recurrent.LSTM({
-    hiddenLayers: [128, 64],
+    hiddenLayers: [128, 128, 64],
   });
 
   console.log(`Starting training for ${dataName}...`);

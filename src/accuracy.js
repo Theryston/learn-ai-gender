@@ -18,7 +18,10 @@ async function main() {
 
   console.log(`Running ${modelName} model`);
   console.time("Time to run model");
-  const predictions = trainingData.map((example) => net.run(example.input));
+  const predictions = trainingData.map((example, index) => {
+    console.log(`Running ${index + 1} of ${trainingData.length}`);
+    return net.run(example.input);
+  });
   console.timeEnd("Time to run model");
 
   const correctPredictions = predictions.filter(
